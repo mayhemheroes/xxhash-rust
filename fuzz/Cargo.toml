@@ -10,10 +10,38 @@ cargo-fuzz = true
 
 [dependencies]
 libfuzzer-sys = "0.4"
-
-[dependencies.xxhash-rust]
-path = ".."
+xxhash-rust = { path = "..", features = ["xxh64", "xxh32", "xxh3"] }
 
 # Prevent this from interfering with workspaces
 [workspace]
 members = ["."]
+
+[[bin]]
+name = "xxh64"
+path = "fuzz_targets/xxh64.rs"
+test = false
+doc = false
+
+[[bin]]
+name = "xxh32"
+path = "fuzz_targets/xxh32.rs"
+test = false
+doc = false
+
+[[bin]]
+name = "xxh3_secret"
+path = "fuzz_targets/xxh3_secret.rs"
+test = false
+doc = false
+
+[[bin]]
+name = "xxh3_seed"
+path = "fuzz_targets/xxh3_seed.rs"
+test = false
+doc = false
+
+[[bin]]
+name = "xxh3"
+path = "fuzz_targets/xxh3.rs"
+test = false
+doc = false
