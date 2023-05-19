@@ -1,0 +1,6 @@
+project: xxhash-rust
+target: xxh3_seed
+duration: 300
+
+cmds:
+  - cmd: /xxh3_seed

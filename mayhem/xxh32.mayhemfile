@@ -1,0 +1,6 @@
+project: xxhash-rust
+target: xxh32
+duration: 300
+
+cmds:
+  - cmd: /xxh32
